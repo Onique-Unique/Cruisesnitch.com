@@ -1,0 +1,102 @@
+# mod_expires, mod_headers, mod_deflate and mod_gzip starts here
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresDefault "access plus 2 days"
+</IfModule>
+## EXPIRES CACHING ##
+
+# Clickjacking Prevent Http Header
+<IfModule mod_headers.c>
+	Header always append X-Frame-Options SAMEORIGIN
+</IfModule>
+
+# Block scrapers except google bot
+<IfModule mod_headers.c>
+	Header set Referrer-Policy "same-origin"
+</IfModule>
+
+# Prevent clickjacking attempts using content security policy http header
+<IfModule mod_headers.c>
+	Header set Content-Security-Policy "frame-ancestors 'none'"
+</IfModule>
+
+## DEFLATE COMPRESSION ##
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE image/x-icon
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/x-font
+AddOutputFilterByType DEFLATE application/x-font-truetype
+AddOutputFilterByType DEFLATE application/x-font-ttf
+AddOutputFilterByType DEFLATE application/x-font-otf
+AddOutputFilterByType DEFLATE application/x-font-opentype
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+AddOutputFilterByType DEFLATE font/ttf
+AddOutputFilterByType DEFLATE font/otf
+AddOutputFilterByType DEFLATE font/opentype
+# For Olders Browsers Which Can't Handle Compression
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+## DEFLATE COMPRESSION ##
+
+## GZIP COMPRESSION ##
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_include handler ^cgi-script$
+</ifModule>
+## GZIP COMPRESSION ##
+
+# Cache-Control
+Header set Cache-Control "max-age=0, private, no-cache, no-store, must-revalidate"
+
+# mod_rewrite starts here
+
+Options +FollowSymLinks 
+
+RewriteEngine on
+
+# REDIRECT NON WWW TO WWW
+RewriteCond %{HTTP_HOST} ^cruisesnitch.com [NC] 
+RewriteRule ^(.*)$ http://www.cruisesnitch.com/$1 [L,R=301]
+
+# does not apply to existing directories, meaning that if the folder exists on the server then don't
+# change anything and don't run the Rule!
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Check for file in the directory with .html extemsion
+
+RewriteCond %{REQUEST_FILENAME}\.html -f
+
+# Here we actually show the page that  has the .html extension
+
+RewriteRule ^(.*)$ $1.html [NC, L]
+
+Redirect 301 /ads.txt https://srv.adstxtmanager.com/19390/cruisesnitch.com

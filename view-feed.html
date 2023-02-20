@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Snitch RSS Feed Generator</title>
+</head>
+<body>
+    <script>
+         // Check if current page is feed page and display feed data if it is
+        if (window.location.pathname === '/view-feed.html') {
+        var preElement = document.createElement('pre');
+        preElement.innerText = localStorage.getItem('cruiseRSSGen') + "\n";
+        document.body.appendChild(preElement);
+        }
+    </script>
+</body>
+</html>
