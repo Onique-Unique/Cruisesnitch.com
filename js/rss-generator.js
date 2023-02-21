@@ -61,7 +61,7 @@ for (let i = links.length - 1; i >= 0; i--) {
     if (!uniqueLinks.has(linkHref)) {
       // If not, add it to the set and add an <item> to the RSS feed
       uniqueLinks.add(linkHref);
-      cruiseRSSGen += '<item>\n<title>' + link.nextElementSibling.textContent + '</title>\n<link>' + linkHref + '</link>\n' + `<media:content url="https://cruisesnitch.com/${imageUrl}" medium="image"/>\n` + '<pubDate>' + new Date().toUTCString() + '</pubDate>\n<guid isPermaLink="false">' + link.nextElementSibling.textContent + '</guid></item>\n';
+      cruiseRSSGen += '<item>\n<title>' + link.children[1].textContent + '</title>\n<link>' + linkHref + '</link>\n' + `<media:content url="https://cruisesnitch.com/${imageUrl}" medium="image"/>\n` + '<pubDate>' + new Date().toUTCString() + '</pubDate>\n<guid isPermaLink="false">' + link.children[1].textContent + '</guid></item>\n';
     }
   }
 }
