@@ -1,14 +1,16 @@
 // Capture The Blogs Section From Index Page, Parse and Load Into Div On About Page - This Works as the both pages have the same connected JS Script
 function loadAllBlogs() {
-    fetch('https://cruisesnitch.com')
-        .then(response => response.text())
-        .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const allBlogsSection = doc.querySelector('#all-blogs');
-            document.querySelector('#all-blogs-container').appendChild(allBlogsSection);
-        })
-        .catch(error => console.error(error));
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', '/index.html', true);
+  xhr.onload = function() {
+      if (this.status === 200) {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(this.responseText, 'text/html');
+          const allBlogsSection = doc.querySelector('#all-blogs');
+          document.querySelector('#all-blogs-container').appendChild(allBlogsSection);
+      }
+  };
+  xhr.send();
 }
 // Load all logs function call
 loadAllBlogs();
