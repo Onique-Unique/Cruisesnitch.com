@@ -486,11 +486,11 @@ figcaption {
     line-height: 1.8
 }
 
-.container .posts-container .post .title span:not(:last-child) {
+.container .posts-container .post .title #blog-attent {
     padding: .5rem 1.5rem;
     border-radius: 5px;
     background-color: #1d6c77;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #fff
 }
 
@@ -840,8 +840,8 @@ figcaption {
         font-size: 2.3rem
     }
 
-    .container .posts-container .post .title span:not(:last-child) {
-        font-size: 3rem
+    .container .posts-container .post .title #blog-attent {
+        font-size: 2.5rem
     }
 
     .container .posts-container .post .text {

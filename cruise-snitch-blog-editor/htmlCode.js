@@ -216,8 +216,8 @@ let htmlCode_first = `<!DOCTYPE html>
         <div class="container" id="posts">
             <div class="posts-container">
                 <div class="post post-top">
-                    <div class="h1-blog">
-                        <h1 class="title"><span>Here it is:</span><b id="share-title"> { .title } </b><span class="yearInsert"></span>! </h1>
+                    <div class="h1-blog title">
+                        <span id="blog-attent">Here it is:</span><h1 class="title"><b id="share-title"> { .title } </b><span class="yearInsert"></span>! </h1>
                         <div class="date">
                             <i class="far fa-clock"></i><a href="/index">&nbsp; Cruise Snitch</a> &bull; <span><time datetime="{ .date-schema }">{ .dateMM }</time></span>
                             <p><i class="fa-solid fa-signature"></i>&nbsp; Onique Campbell</p>
@@ -309,7 +309,7 @@ let htmlCode_last = `
 
     <!-- H2 Page Tags -->
     <h2 class="footer-h2-page-tags">
-    Here it is: { .title }<span class="yearInsert"></span>!
+     { .title }<span class="yearInsert"></span>!
     </h2>
 
     </section>
