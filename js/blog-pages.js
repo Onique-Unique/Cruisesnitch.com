@@ -36,55 +36,57 @@ window.onload = function () {
         });
     };
 
-    // Find the first div-container element on the page
-    const divContainerPrepend = document.querySelector('.div-container');
+    // Uncomment When Digital Products Are Built  vvvv
 
-    // Create a new HTML element
-    const newElement = document.createElement('div');
-    newElement.id = "next-trip-items";
-    newElement.innerHTML = `
-<div class="suggested-top">
-                <h2> For Your Next Trip! </h2>
-                <!-- Only one Suggested Item for affiliate -->
-                <div class="wrapper">
-                    <div class="item-box">
-                        <a href="#" target="_blank">
-                            <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-                        <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine Tasting Chart</h3></a>                   
-                        <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
-                    </div>
-                    <div class="item-box">
-                        <a href="#" target="_blank">
-                            <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-                        <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine And Cheese Tasting Chart (Combo)</h3></a> 
-                        <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
-                    </div>
-                </div>
-                <div class="wrapper">
-                    <div class="item-box">
-                        <a href="#" target="_blank">
-                            <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-                        <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Tour Guide Referral</h3></a>                   
-                        <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
-                    </div>
-                    <div class="item-box">
-                        <a href="#" target="_blank">
-                            <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-                            <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Crew & Staff Off Boarding Messages</h3></a>
-                        <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
-                    </div>
-                </div>
-                <h3><span>Tip:</span> Add to cart to lock in cheapest deal!</h3>
-            </div>
-            `;
+//     // Find the first div-container element on the page
+//     const divContainerPrepend = document.querySelector('.div-container');
 
-    // Insert the new element before the first div-container element
-    if (divContainerPrepend) {
-        divContainerPrepend.parentNode.insertBefore(newElement, divContainerPrepend);
-    } else {
-        // Handle the case where no div-container elements were found
-        console.log('No div-container elements found on the page.');
-    }
+//     // Create a new HTML element
+//     const newElement = document.createElement('div');
+//     newElement.id = "next-trip-items";
+//     newElement.innerHTML = `
+// <div class="suggested-top">
+//                 <h2> For Your Next Trip! </h2>
+//                 <!-- Only one Suggested Item for affiliate -->
+//                 <div class="wrapper">
+//                     <div class="item-box">
+//                         <a href="#" target="_blank">
+//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine Tasting Chart</h3></a>                   
+//                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
+//                     </div>
+//                     <div class="item-box">
+//                         <a href="#" target="_blank">
+//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine And Cheese Tasting Chart (Combo)</h3></a> 
+//                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
+//                     </div>
+//                 </div>
+//                 <div class="wrapper">
+//                     <div class="item-box">
+//                         <a href="#" target="_blank">
+//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Tour Guide Referral</h3></a>                   
+//                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
+//                     </div>
+//                     <div class="item-box">
+//                         <a href="#" target="_blank">
+//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                             <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Crew & Staff Off Boarding Messages</h3></a>
+//                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
+//                     </div>
+//                 </div>
+//                 <h3><span>Tip:</span> Add to cart to lock in cheapest deal!</h3>
+//             </div>
+//             `;
+
+//     // Insert the new element before the first div-container element
+//     if (divContainerPrepend) {
+//         divContainerPrepend.parentNode.insertBefore(newElement, divContainerPrepend);
+//     } else {
+//         // Handle the case where no div-container elements were found
+//         console.log('No div-container elements found on the page.');
+//     }
 
     // Swap CSS Background Image for Higher Quality
     var featuredImg = document.querySelector('.featured-img');
