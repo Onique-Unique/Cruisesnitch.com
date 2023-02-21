@@ -11,17 +11,17 @@
     xmlns:media="http://search.yahoo.com/mrss/"
     >
   <channel>
-    <title>Cruise Snitch Blog & News</title>
+    <title>Cruise Snitch Blog And News</title>
     <atom:link href="https://cruisesnitch.com/feed" rel="self" type="application/rss+xml" />
     <ttl>60</ttl>
     <link>https://cruisesnitch.com</link>
-    <description>Cruise Snitch - Best Travel Blog & Guides For Cruise Passengers</description>
+    <description>Cruise Snitch - Best Travel Blog And Guides For Cruise Passengers</description>
     <lastBuildDate>Mon, 20 Feb 2023 22:39:59 GMT</lastBuildDate>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <image>
        <url>https://cruisesnitch.com/images/game-lounge-img/favicon_io/favicon-32x32.png</url>
-       <title>Cruise Snitch Blog & News</title>
+       <title>Cruise Snitch Blog And News</title>
        <link>https://cruisesnitch.com</link>
        <width>32</width>
 	<height>32</height>

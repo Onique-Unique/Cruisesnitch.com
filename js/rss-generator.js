@@ -16,17 +16,17 @@ var cruiseRSSGen = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
     xmlns:media="http://search.yahoo.com/mrss/"
     >
   <channel>
-    <title>Cruise Snitch Blog & News</title>
+    <title>Cruise Snitch Blog And News</title>
     <atom:link href="https://${OgDomain}/feed" rel="self" type="application/rss+xml" />
     <ttl>60</ttl>
     <link>https://${OgDomain}</link>
-    <description>Cruise Snitch - Best Travel Blog & Guides For Cruise Passengers</description>
+    <description>Cruise Snitch - Best Travel Blog And Guides For Cruise Passengers</description>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <image>
        <url>https://${OgDomain}/images/game-lounge-img/favicon_io/favicon-32x32.png</url>
-       <title>Cruise Snitch Blog & News</title>
+       <title>Cruise Snitch Blog And News</title>
        <link>https://${OgDomain}</link>
        <width>32</width>
 	<height>32</height>
