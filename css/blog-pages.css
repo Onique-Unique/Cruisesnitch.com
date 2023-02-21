@@ -693,10 +693,6 @@ figcaption {
     background: var(--orange)
 }
 
-.footer-h2-page-tags {
-    display: none
-}
-
 .container .posts-container .post .text-alt,
 .div-container-main {
     background: #3d95fa2d;

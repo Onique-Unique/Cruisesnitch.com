@@ -306,12 +306,6 @@ let htmlCode_last = `
     </div>
 
     <div class="credit"><span>Cruise Snitch</span> | all rights reserved</div>
-
-    <!-- H2 Page Tags -->
-    <h2 class="footer-h2-page-tags">
-     { .title }<span class="yearInsert"></span>!
-    </h2>
-
     </section>
 
     <!-- footer section ends -->
