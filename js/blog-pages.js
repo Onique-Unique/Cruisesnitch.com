@@ -51,28 +51,28 @@ window.onload = function () {
 //                 <div class="wrapper">
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Wine Score Card.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine Score Card</h3></a>                   
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Wine Card.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Wine Score Card</h3></a>                   
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Cheese Rate Card.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Cheese Rate Card</h3></a> 
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Cheese Card.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Cheese Rate Card</h3></a> 
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                 </div>
 //                 <div class="wrapper">
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Wine Cheese Score Chart Combo.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine & Cheese Score Chart (Combo) </h3></a>                   
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Wine & Cheese Combo.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Wine & Cheese Score Chart (Combo)</h3></a>                   
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Wine Cheese Score Chart Combo.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                             <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Tour Guide Referral</h3></a>
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Trivia Card.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                             <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Trivia Fill Out Answer Sheet</h3></a>
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                 </div>
