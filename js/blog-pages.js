@@ -74,43 +74,47 @@ setInterval(function () {
 
 // Capture The Blogs Section From Index Page, Parse and Load Into Div On About Page - This Works as the both pages have the same connected JS Script
 // Save content to localStorage
-// function saveContentToLocalStorage(data) {
-//     localStorage.setItem('allBlogsContent', JSON.stringify(data));
-// }
+function saveContentToLocalStorage(data) {
+    localStorage.setItem('allBlogsContent', JSON.stringify(data));
+}
 
 // Load content from localStorage
-// function loadContentFromLocalStorage() {
-//     const allBlogsContent = localStorage.getItem('allBlogsContent');
-//     if (allBlogsContent) {
-//         return JSON.parse(allBlogsContent);
-//     }
-//     return null;
-// }
+function loadContentFromLocalStorage() {
+    const allBlogsContent = localStorage.getItem('allBlogsContent');
+    if (allBlogsContent) {
+        return JSON.parse(allBlogsContent);
+    }
+    return null;
+}
 
 // Load all blogs
 function loadAllBlogs() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://cruisesnitch.com/', true);
-    xhr.onload = function () {
-        if (this.status === 200) {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(this.responseText, 'text/html');
-            const allBlogsSection = doc.querySelector('#all-blogs');
-            // Parse content into a DOM node
-            const node = document.createRange().createContextualFragment(allBlogsSection.outerHTML);
-            document.querySelector('#all-blogs-container').appendChild(node);
-            // saveContentToLocalStorage(allBlogsSection.outerHTML);
-        }
-    };
-    xhr.send();
-    // let allBlogsContent = loadContentFromLocalStorage();
-    // if (allBlogsContent) {
-    //     // Parse content into a DOM node
-    //     const node = document.createRange().createContextualFragment(allBlogsContent.outerHTML);
-    //     document.querySelector('#all-blogs-container').appendChild(node);
-    // }
+    const allBlogsContainer = document.querySelector('#all-blogs-container');
+    let allBlogsContent = loadContentFromLocalStorage();
+
+    if (allBlogsContent !== null) {
+        // Parse content into a DOM node
+        const node = document.createRange().createContextualFragment(allBlogsContent);
+        allBlogsContainer.appendChild(node);
+    } else {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://cruisesnitch.com/', true);
+        xhr.onload = function () {
+            if (this.status === 200) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(this.responseText, 'text/html');
+                const allBlogsSection = doc.querySelector('#all-blogs');
+                // Parse content into a DOM node
+                const node = document.createRange().createContextualFragment(allBlogsSection.outerHTML);
+                allBlogsContainer.appendChild(node);
+                saveContentToLocalStorage(allBlogsSection.outerHTML);
+            }
+        };
+        xhr.send();
+    }
 }
-// Load all logs function call
+
+// Load all blogs function call
 loadAllBlogs();
 
 window.onload = function () {
