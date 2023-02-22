@@ -38,8 +38,8 @@ window.onload = function () {
 
     // Uncomment When Digital Products Are Built  vvvv
 
-//     // Find the first div-container element on the page
-//     const divContainerPrepend = document.querySelector('.div-container');
+    // Find the first div-container element on the page
+    // const divContainerPrepend = document.querySelector('.div-container');
 
 //     // Create a new HTML element
 //     const newElement = document.createElement('div');
@@ -51,28 +51,28 @@ window.onload = function () {
 //                 <div class="wrapper">
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine Tasting Chart</h3></a>                   
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Wine Score Card.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine Score Card</h3></a>                   
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine And Cheese Tasting Chart (Combo)</h3></a> 
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Cheese Rate Card.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Cheese Rate Card</h3></a> 
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                 </div>
 //                 <div class="wrapper">
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Tour Guide Referral</h3></a>                   
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Wine Cheese Score Chart Combo.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Wine & Cheese Score Chart (Combo) </h3></a>                   
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                     <div class="item-box">
 //                         <a href="#" target="_blank">
-//                             <img loading="lazy" class="suggested-item" border="0" src="/images/blog-images/Mommy-Daughter-Etsy-Listing.PNG" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
-//                             <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Crew & Staff Off Boarding Messages</h3></a>
+//                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Wine Cheese Score Chart Combo.png" alt="For Your Next Trip" title="For Your Next Trip" decoding="async"></a>
+//                             <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item"> Tour Guide Referral</h3></a>
 //                         <a class="suggest-link" href="#" target="_blank" rel="nofollow">See Item</a>
 //                     </div>
 //                 </div>
