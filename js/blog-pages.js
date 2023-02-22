@@ -74,23 +74,23 @@ setInterval(function () {
 
 // Capture The Blogs Section From Index Page, Parse and Load Into Div On About Page - This Works as the both pages have the same connected JS Script
 // Save content to localStorage
-function saveContentToLocalStorage(data) {
-    localStorage.setItem('allBlogsContent', JSON.stringify(data));
-}
+// function saveContentToLocalStorage(data) {
+//     localStorage.setItem('allBlogsContent', JSON.stringify(data));
+// }
 
 // Load content from localStorage
-function loadContentFromLocalStorage() {
-    const allBlogsContent = localStorage.getItem('allBlogsContent');
-    if (allBlogsContent) {
-        return JSON.parse(allBlogsContent);
-    }
-    return null;
-}
+// function loadContentFromLocalStorage() {
+//     const allBlogsContent = localStorage.getItem('allBlogsContent');
+//     if (allBlogsContent) {
+//         return JSON.parse(allBlogsContent);
+//     }
+//     return null;
+// }
 
 // Load all blogs
 function loadAllBlogs() {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/index.html', true);
+    xhr.open('GET', 'https://cruisesnitch.com/', true);
     xhr.onload = function () {
         if (this.status === 200) {
             const parser = new DOMParser();
@@ -103,7 +103,7 @@ function loadAllBlogs() {
         }
     };
     xhr.send();
-    let allBlogsContent = loadContentFromLocalStorage();
+    // let allBlogsContent = loadContentFromLocalStorage();
     // if (allBlogsContent) {
     //     // Parse content into a DOM node
     //     const node = document.createRange().createContextualFragment(allBlogsContent.outerHTML);
