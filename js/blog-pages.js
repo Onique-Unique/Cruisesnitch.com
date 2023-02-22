@@ -99,7 +99,7 @@ function loadAllBlogs() {
             // Parse content into a DOM node
             const node = document.createRange().createContextualFragment(allBlogsSection.outerHTML);
             document.querySelector('#all-blogs-container').appendChild(node);
-            saveContentToLocalStorage(allBlogsSection.outerHTML);
+            // saveContentToLocalStorage(allBlogsSection.outerHTML);
         }
     };
     xhr.send();
