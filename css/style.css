@@ -56,7 +56,7 @@ a {
     display: none !important;
 }
 
-.container{
+.container, .blogs-container{
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 10px;
@@ -465,7 +465,7 @@ a {
 
 /* .................MEDIA QUERIES..................... */
 @media screen and (max-width: 1140px){
-    .container{
+    .container, .blogs-container {
         max-width: 991px;
         padding: 0 20px;
     }
@@ -597,5 +597,4 @@ a {
     .primary_button{
         font-size: 16px;
     }
-    
 }
