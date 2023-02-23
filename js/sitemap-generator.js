@@ -23,7 +23,7 @@ for (var i = 0; i < anchors.length; i++) {
   }
 }
 
-var cruiseSitemapGen = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" \n xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \n xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 \n http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"> \n\n <!--Current Sitemap links: ${anchorsWithHostname.length + 1} --> \n ${domainXML} \n`;
+var cruiseSitemapGen = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" \n xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \n xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 \n http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"> \n\n <!--Current Sitemap links: ${anchorsWithHostname.length + 1 - 3} --> \n ${domainXML} \n`;
 var linkHrefs = [];
 
 for (let link of links) {
