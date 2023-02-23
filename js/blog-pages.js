@@ -74,15 +74,20 @@ setInterval(function () {
 
 // Capture The Blogs Section From Index Page, Parse and Load Into Div On About Page - This Works as the both pages have the same connected JS Script
 // Save content to localStorage
-function saveContentToLocalStorage(data) {
+function saveContentToLocalStorage(data, timestamp) {
     localStorage.setItem('allBlogsContent', JSON.stringify(data));
+    localStorage.setItem('allBlogsContentTimestamp', timestamp);
 }
 
 // Load content from localStorage
 function loadContentFromLocalStorage() {
     const allBlogsContent = localStorage.getItem('allBlogsContent');
-    if (allBlogsContent) {
-        return JSON.parse(allBlogsContent);
+    const allBlogsContentTimestamp = localStorage.getItem('allBlogsContentTimestamp');
+    if (allBlogsContent && allBlogsContentTimestamp) {
+        const ageInMilliseconds = Date.now() - Number(allBlogsContentTimestamp);
+        if (ageInMilliseconds < 86400000) { // One day in milliseconds
+            return JSON.parse(allBlogsContent);
+        }
     }
     return null;
 }
@@ -107,7 +112,8 @@ function loadAllBlogs() {
                 // Parse content into a DOM node
                 const node = document.createRange().createContextualFragment(allBlogsSection.outerHTML);
                 allBlogsContainer.appendChild(node);
-                saveContentToLocalStorage(allBlogsSection.outerHTML);
+                const timestamp = Date.now();
+                saveContentToLocalStorage(allBlogsSection.outerHTML, timestamp);
             }
         };
         xhr.send();
