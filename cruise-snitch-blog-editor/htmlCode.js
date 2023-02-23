@@ -256,6 +256,7 @@ let htmlCode_first = `<!DOCTYPE html>
                         <h3 class="related-links" id="related-links-alt"><span>Choose Your Topic:</span> <i class="fa-solid fa-circle-chevron-down"></i></h3>
                         <div class="top-picks-list hide" id="top-picks-list">
                             <h4>Onpage Links &darr;</h4>
+                            <li><a href="#on-page-video">Video - { .title }</a></li>
                             <li><a href="#review-1">{ .first-h2 }</a></li>
                             <li><a href="#review-2">{ .second-h2 }</a></li>
                             <li><a href="#review-3">{ .third-h2 }</a></li>
