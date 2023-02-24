@@ -176,7 +176,7 @@ submit.addEventListener('click', (e) => {
 
 //Get the preliminary inputs - title, description, link, secondary title details
 getPreInputs = () => {
-    title = document.getElementById('title');
+    title = document.getElementById('title').value;
     description = document.getElementById('description');
     link = document.getElementById('link');
     secondary_title = document.getElementById('secondary_title');
@@ -185,7 +185,7 @@ getPreInputs = () => {
     current_image_link = document.getElementById("image-link");
 
     input = {
-        title: title.value,
+        title: title,
         description: description.value,
         'current-page-link': link.value,
         'secondary-title': secondary_title.value,
@@ -193,6 +193,7 @@ getPreInputs = () => {
         'secondary-title-paragraph-2': secondary_para_2.value,
         'current-image-link': current_image_link.value.replace("C:\\fakepath\\", "")
     };
+    htmlCode_first = htmlCode_first.replace(/{ .on-page-video }/g, title);
 };
 
 createParas = () => {
