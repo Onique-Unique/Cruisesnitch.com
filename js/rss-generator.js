@@ -39,8 +39,8 @@ var uniqueLinks = new Set();
 // Count from backwards/ latest
 for (let i = links.length - 1; i >= 0; i--) {
 
-  // Find Up to the 10 latest content links and coresponding images belonging to the misc-guides div on the index page
-  if (uniqueLinks.size >= 50) {
+  // Find Up to the 60 latest content links and coresponding images belonging to the all-blogs div on the index page
+  if (uniqueLinks.size >= 60) {
     break;
   }
   let link = links[i];
