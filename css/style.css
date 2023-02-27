@@ -2,6 +2,7 @@
 
 :root{
     --color-primary: #3362fd;
+    --color-btn-primary: #fd3333;
     --color-primary-light: #1d3577;
     --color-secondary: #502328;
     --color-secondary-light: #502328;
@@ -25,6 +26,7 @@ html{
 
 body{
     font-family: var(--font-secondary);
+    min-width: 280px;
 }
 
 body::-webkit-scrollbar {
@@ -82,10 +84,10 @@ a {
     align-items: center;
 }
 
-.primary_button{
+.primary_button, .youtube_btn {
     border: none;
     outline: none;
-    background-color: var(--color-primary);
+    background-color: var(--color-btn-primary);
     color: var(--color-white);
     padding: 15px;
     font-weight: bold;
@@ -97,6 +99,11 @@ a {
     gap: 5px;
     cursor: pointer;
     transition: all .3s;
+}
+
+.youtube_btn {
+    margin: 0 auto;
+    width: 350px;
 }
 
 .primary_button.full{
@@ -581,6 +588,10 @@ a {
 }
 
 @media screen and (max-width: 600px){
+    .youtube_btn {
+        width: 80%;
+    }
+
     .blogs .blog_wrapper .blog_card{
         width: 100%;
     }

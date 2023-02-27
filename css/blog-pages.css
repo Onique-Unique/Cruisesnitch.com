@@ -8,6 +8,7 @@
     --orange: #fd835d;
     --blue-dark: hsl(238, 29%, 16%);
     --color-primary: #3362fd;
+    --color-btn-primary: #fd3333;
     --color-primary-light: #1d3577;
     --color-secondary: #502328;
     --color-secondary-light: #502328;
@@ -36,7 +37,8 @@ html {
 
 body {
     overflow-x: hidden;
-    font-family: var(--font-secondary)
+    font-family: var(--font-secondary);
+    min-width: 280px;
 }
 
 body::-webkit-scrollbar {
@@ -147,7 +149,7 @@ figcaption {
 .primary_button{
     border: none;
     outline: none;
-    background-color: var(--color-primary);
+    background-color: var(--color-btn-primary);
     color: var(--color-white);
     padding: 15px;
     font-weight: bold;
