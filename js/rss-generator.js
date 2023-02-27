@@ -40,7 +40,7 @@ var uniqueLinks = new Set();
 for (let i = links.length - 1; i >= 0; i--) {
 
   // Find Up to the 60 latest content links and coresponding images belonging to the all-blogs div on the index page
-  if (uniqueLinks.size >= 60) {
+  if (uniqueLinks.size >= 70) {
     break;
   }
   let link = links[i];
