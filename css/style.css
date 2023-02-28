@@ -252,6 +252,7 @@ a {
 
 .featured-img {
     background-image: url(/images/blog-images/cruise-ft-img-low-res.jpg);
+    background-size: cover;
 }
 
 .banner .banner_content{

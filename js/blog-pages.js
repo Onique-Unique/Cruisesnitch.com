@@ -206,21 +206,30 @@ window.onload = function () {
     //             `;
 
     //     // Insert the new element before the first div-container element
-        // if (divContainerPrepend) {
-        //     divContainerPrepend.parentNode.insertBefore(newElement, divContainerPrepend);
-        // } else {
-        //     // Handle the case where no div-container elements were found
-        //     console.log('No div-container elements found on the page.');
-        // }
+    // if (divContainerPrepend) {
+    //     divContainerPrepend.parentNode.insertBefore(newElement, divContainerPrepend);
+    // } else {
+    //     // Handle the case where no div-container elements were found
+    //     console.log('No div-container elements found on the page.');
+    // }
 
     // Swap CSS Background Image for Higher Quality
     var featuredImg = document.querySelector('.featured-img');
-    var highres = '/images/blog-images/cruise-ft-img.jpg';
+    var highres = '';
+    var onpageImg = document.querySelector('img'); // Find the first <img> element on the page
+    if (onpageImg) { // Check if an <img> element was found
+        highres = onpageImg.srcset; // Use its 'srcset' value as 'highres'
+    }
+
     var img = new Image();
-    img.src = highres;
     img.onload = function () {
-        featuredImg.style.backgroundImage = 'url(' + highres + ')';
+        featuredImg.style.opacity = 0; // Set the initial opacity to 0
+        featuredImg.style.backgroundImage = 'url(' + highres.split(' ')[0] + ')'; // Use the first image URL in the 'srcset'
+        setTimeout(function () {
+            featuredImg.style.opacity = 1; // Fade in the new image by setting its opacity to 1
+        }, 50); // Wait 50 milliseconds before fading in the new image
     };
+    img.srcset = highres; // Preload the new image
 
     // See more blogs button
     // get the button and the blog wrapper
