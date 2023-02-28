@@ -85,7 +85,7 @@ figcaption {
     height: 450px;
     background-image: url(/images/blog-images/cruise-ft-img-low-res.jpg);
     transition: background-image 1.5s ease-in-out;
-    box-shadow: -2px 3px 4px 14px #38accb inset;
+    /* box-shadow: -2px 3px 4px 14px #38accb inset; */
     position: relative;
     background-size: cover;
 }
