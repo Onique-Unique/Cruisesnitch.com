@@ -51,24 +51,24 @@ let htmlCode_first = `<!DOCTYPE html>
                 },
                 "image": [{
                         "@type": "ImageObject",
-                        "url": "https://cruisesnitch.com/images/blog-images/cruise-ft-img.jpg",
+                        "url": "https://cruisesnitch.com/images/blog-images/{ .current-image-link }",
                         "width": 1400,
                         "height": 1400
                     },
                     {
                         "@type": "ImageObject",
-                        "url": "https://cruisesnitch.com/images/blog-images/cruise-ft-img.jpg",
+                        "url": "https://cruisesnitch.com/images/blog-images/{ .current-image-link }",
                         "width": 1400,
                         "height": 1050
                     },
                     {
                         "@type": "ImageObject",
-                        "url": "https://cruisesnitch.com/images/blog-images/cruise-ft-img.jpg",
+                        "url": "https://cruisesnitch.com/images/blog-images/{ .current-image-link }",
                         "width": 1400,
                         "height": 788
                     }
                 ],
-                "thumbnailUrl": "https://cruisesnitch.com/images/blog-images/cruise-ft-img.jpg"
+                "thumbnailUrl": "https://cruisesnitch.com/images/blog-images/{ .current-image-link }"
             }
     </script>
     <!-- Only add max 2 Faq q&a per page as it doesnt influence the PAA section on google only to expand the website appearance - preferably the most clickbait/ click worthy ones -->
