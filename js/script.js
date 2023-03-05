@@ -115,7 +115,7 @@ window.onload = function () {
   // add a click event listener to the button
   blogsButton.addEventListener('click', function () {
     // change the blog heading
-    blogHeading.textContent = "All Cruise Travel Blogs";
+    blogHeading.textContent = "All Cruise Travel Guides";
     // remove the hide class from the blog wrapper
     blogWrapper.classList.remove('hide');
     // add the hide class to the button
