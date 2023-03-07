@@ -278,6 +278,10 @@ a {
     color: var(--color-highlight);
 }
 
+.banner .banner_text span{
+    color: var(--color-secondary);
+}
+
 .banner .floating_images{
     display: flex;
     align-items: center;
