@@ -733,7 +733,15 @@ fetch("https://cruisesnitch.com")
 
         // Create a container element for the popup messages
         const popupDiv = document.createElement("div");
-        popupDiv.innerHTML = `<i class="fa-solid fa-circle-exclamation" style="position: fixed; right: 1%; color: red; font-size: 18px; background: aliceblue;     border-radius: 100%; border: 2px solid aliceblue;"></i>`;
+        const popupAlertIcon = document.createElement("i");
+        popupAlertIcon.className = "fa-solid fa-circle-exclamation";
+        popupAlertIcon.style.position = "fixed";
+        popupAlertIcon.style.right = "1%";
+        popupAlertIcon.style.color = "red";
+        popupAlertIcon.style.fontSize = "18px";
+        popupAlertIcon.style.background = "aliceblue";
+        popupAlertIcon.style.borderRadius = "100%";
+        popupAlertIcon.style.border = "2px solid aliceblue";
         const popupContainer = document.createElement("div");
         popupContainer.style.position = "fixed";
         popupContainer.style.bottom = "0";
@@ -743,13 +751,14 @@ fetch("https://cruisesnitch.com")
         popupContainer.style.borderRadius = "5px";
         popupContainer.style.zIndex = "9999";
         popupContainer.style.overflowY = "scroll";
+        popupDiv.appendChild(popupAlertIcon);
         document.body.appendChild(popupContainer);
 
         // Create an array to store outdated pages
         const outdatedPages = [];
 
         // Add event listener to the popup icon to toggle the visibility of the popup container
-        popupDiv.addEventListener("click", () => {
+        popupAlertIcon.addEventListener("click", () => {
             popupContainer.classList.toggle("outdated-blog-alert");
         });
 
@@ -787,7 +796,7 @@ fetch("https://cruisesnitch.com")
                             popup.style.marginBottom = "5px";
                             popup.style.borderRadius = "5px";
                             popup.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
-                            popup.innerHTML = `<span style="color: black">The content of this page is now outdated. Please update:</span> <span style="color: red">${dateString}</span> <br><a href="${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}">${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}</a>`;
+                            popup.innerHTML = `<span style="color: black">The content of this page is now outdated. Please update:</span> <span style="color: red">${dateString}</span> <br><a href="${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}" target="_blank">${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}</a>`;
                             popupDiv.appendChild(popup)
                             popupContainer.appendChild(popupDiv);
                             outdatedPages.push(popup); // Add the popup to the array of outdated pages

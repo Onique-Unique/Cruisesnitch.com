@@ -79,7 +79,7 @@ for (let i = 0; i < blogLinks.length; i++) {
                     popup.style.padding = "20px";
                     popup.style.borderRadius = "5px";
                     popup.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
-                    popup.innerHTML = `The content of this page is now outdated. Please update: <span style="color: red">${dateString}</span> <br><a href="${blogLink.href.replace(/^https?:\/\/[^\/]+/, domain)}">${blogLink.href.replace(/^https?:\/\/[^\/]+/, domain)}</a>`;
+                    popup.innerHTML = `The content of this page is now outdated. Please update: <span style="color: red">${dateString}</span> <br><a href="${blogLink.href.replace(/^https?:\/\/[^\/]+/, domain)}" target="_blank">${blogLink.href.replace(/^https?:\/\/[^\/]+/, domain)}</a>`;
                     popupDiv.appendChild(popup)
                     popupContainer.appendChild(popupDiv);
                     outdatedPages.push(popup); // Add the popup to the array of outdated pages
