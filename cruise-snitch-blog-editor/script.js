@@ -776,7 +776,7 @@ fetch("https://cruisesnitch.com")
                         const diffWeeks = Math.ceil(diffDays / 7);
                         const diffMonths = diffDays / 30;
                         // Check if the date is older than the cutoff date
-                        if (diffDays > 19 || diffWeeks > 26.071 || diffMonths > 6) {
+                        if (diffDays > 182.5 || diffWeeks > 26.071 || diffMonths > 6) {
                             const domain = 'https://cruisesnitch.com';
                             // Create a popup with a message indicating that the page is outdated
                             const popup = document.createElement("div");
