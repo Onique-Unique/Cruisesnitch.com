@@ -20,6 +20,10 @@ body {
     background-color: #484b50;
 }
 
+.outdated-blog-alert {
+    width: 0;
+}
+
 .app-container {
     width: 100%;
     margin-top: 10px;
