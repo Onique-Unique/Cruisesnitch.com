@@ -14,7 +14,7 @@
     --color-secondary-light: #502328;
     --color-highlight: #ee234a;
     --color-white: #fff;
-    
+
     --font-secondary: 'Raleway', sans-serif
 }
 
@@ -148,7 +148,7 @@ figcaption {
     background: var(--orange)
 }
 
-.primary_button{
+.primary_button {
     border: none;
     outline: none;
     background-color: var(--color-btn-primary);
@@ -165,12 +165,12 @@ figcaption {
     transition: all .3s;
 }
 
-.primary_button.full{
+.primary_button.full {
     width: 100%;
     text-align: center;
 }
 
-.primary_button:hover{
+.primary_button:hover {
     background-color: var(--color-primary-light);
 }
 
@@ -656,18 +656,85 @@ figcaption {
     background-color: #ccc
 }
 
-/* .................BLOGS........................... */
-.blogs{
-    padding:0 0 50px 0;
+/* ........................Table Design...................... */
+.table-container, .div-container {
+    background-color: #dadada2b;
+    padding: 25px;
 }
 
-.blogs-container{
+table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e1e5ee;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+}
+
+table thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+table th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+table tbody {
+    font-size: 14px;
+}
+
+table td {
+    padding: 1rem 2rem;
+    text-transform: capitalize;
+}
+
+table a {
+    text-decoration: none;
+    color: #2962ff;
+}
+
+table .status {
+    border-radius: 0.2rem;
+    background-color: red;
+    padding: 0.2rem 1rem;
+    text-align: center;
+}
+
+table .status-mid {
+    background-color: #fff0c2;
+    color: #a68b00;
+}
+
+table .status-low {
+    background-color: #c8e6c9;
+    color: #388e3c;
+}
+
+table .status-high {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f6fb;
+}
+
+/* .................BLOGS........................... */
+.blogs {
+    padding: 0 0 50px 0;
+}
+
+.blogs-container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 10px;
 }
 
-.blogs .blog_wrapper{
+.blogs .blog_wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -675,14 +742,14 @@ figcaption {
     gap: 10px;
 }
 
-.blogs .blog_wrapper .blog_card{
+.blogs .blog_wrapper .blog_card {
     width: 32%;
     margin-bottom: 20px;
     /* height: 400px; */
     box-shadow: 0px 15px 15px -10px rgb(0 0 0 / 5%);
 }
 
-.blogs_heading{
+.blogs_heading {
     color: var(--color-secondary);
     font-family: var(--font-primary);
     font-size: 40px;
@@ -690,15 +757,15 @@ figcaption {
     margin-bottom: 30px;
 }
 
-.blogs .blog_card .blog_card_img{
+.blogs .blog_card .blog_card_img {
     width: 100%;
 }
 
-.blogs .blog_card .blog_card_content{
+.blogs .blog_card .blog_card_content {
     padding: 30px;
 }
 
-.blogs .blog_card .blog_card_text{
+.blogs .blog_card .blog_card_text {
     color: var(--color-secondary);
     font-family: var(--font-primary);
     font-size: 20px;
@@ -864,7 +931,7 @@ figcaption {
     border: 5px solid #f0f8ff
 }
 
-@media (max-width: 1140px){
+@media (max-width: 1140px) {
     .blogs-container {
         max-width: 991px;
         padding: 0 20px;
@@ -875,7 +942,8 @@ figcaption {
     .header {
         padding: 1.5rem
     }
-    .blogs .blog_wrapper .blog_card{
+
+    .blogs .blog_wrapper .blog_card {
         width: 49%;
     }
 }
@@ -935,8 +1003,8 @@ figcaption {
     }
 }
 
-@media (max-width: 600px){
-    .blogs .blog_wrapper .blog_card{
+@media (max-width: 600px) {
+    .blogs .blog_wrapper .blog_card {
         width: 100%;
     }
 }
@@ -959,7 +1027,7 @@ figcaption {
         height: 15rem
     }
 
-    .primary_button{
+    .primary_button {
         font-size: 16px;
     }
 }

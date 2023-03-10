@@ -775,7 +775,8 @@ fetch("https://cruisesnitch.com")
                     const doc = parser.parseFromString(html, "text/html");
 
                     // Find the datetime attribute of the page
-                    const cutoffDate = new Date("2023-03-09T00:00:00.000Z"); // UTC timezone
+                    const currentDate = new Date().toISOString().substring(0, 23) + "Z";
+                    const cutoffDate = new Date(currentDate); // UTC timezone
                     const datetime = doc.querySelector("[datetime]");
                     if (datetime) {
                         const dateString = datetime.getAttribute("datetime").slice(0, 10);
@@ -785,7 +786,7 @@ fetch("https://cruisesnitch.com")
                         const diffWeeks = Math.ceil(diffDays / 7);
                         const diffMonths = diffDays / 30;
                         // Check if the date is older than the cutoff date
-                        if (diffDays > 182.5 || diffWeeks > 26.071 || diffMonths > 6) {
+                        if (diffDays > 91.25 || diffWeeks > 13.036 || diffMonths > 3) {
                             const domain = 'https://cruisesnitch.com';
                             // Create a popup with a message indicating that the page is outdated
                             const popup = document.createElement("div");
@@ -796,7 +797,7 @@ fetch("https://cruisesnitch.com")
                             popup.style.marginBottom = "5px";
                             popup.style.borderRadius = "5px";
                             popup.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
-                            popup.innerHTML = `<span style="color: black">The content of this page is now outdated. Please update:</span> <span style="color: red">${dateString}</span> <br><a href="${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}" target="_blank">${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}</a>`;
+                            popup.innerHTML = `<span style="color: black">The table content of this page is now outdated. Please update:</span> <span style="color: red">${dateString}</span> <br><a href="${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}" target="_blank">${blogLink.href.replace(/^file:\/\/\/[A-Za-z]:/, domain)}</a>`;
                             popupDiv.appendChild(popup)
                             popupContainer.appendChild(popupDiv);
                             outdatedPages.push(popup); // Add the popup to the array of outdated pages
