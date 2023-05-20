@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YT Thumbnail Comparison Tool</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #232323, #121212);
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .tool-instructions {
+            margin-top: 10px;
+            text-align: left;
+            margin-left: 30px;
+            font-size: 14px;
+            padding-top: 20px;
+        }
+
+        .tool-instructions h3 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .tool-instructions ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .tool-instructions li {
+            margin-bottom: 10px;
+        }
+
+        .wrapper {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-bottom: 120px;
+        }
+
+        .image {
+            margin: 5px;
+            width: 200px;
+            /* Adjust the width as per your requirements */
+            height: 150px;
+            /* Adjust the height as per your requirements */
+        }
+
+        .image img {
+            max-width: 100%;
+            height: 200px;
+        }
+
+        .video-container {
+            margin-top: 40px;
+            max-width: 800px;
+            /* Adjust the max-width as needed */
+            width: 100%;
+            text-align: center;
+        }
+
+        .video-container h2 {
+            color: #fff;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .video-container video {
+            max-width: 100%;
+            /* Adjust the max-width as needed */
+            height: 650px;
+        }
+
+        button {
+            background: linear-gradient(to bottom right, #ffd700, #ffa500);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(to bottom right, #ffa500, #ffd700);
+        }
+
+        .popup {
+            position: fixed;
+            top: 25%;
+            left: 55%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px 4px 4px 0px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .popup.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .tool-instructions {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .images-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image {
+                width: 80%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bookmark This Tool!</h1>
+        <button id="copyButton">Copy Bookmarklet</button>
+        <div class="tool-instructions">
+            <h3>How to setup the Youtube Thumbnail Compare & Review Tool:</h3>
+            <ul>
+                <li>Step 1: First, copy the bookmarklet code by clicking the "Copy Bookmarklet" button above.</li>
+                <li>Step 2: Create a new bookmark in your browser.</li>
+                <li>Step 3: Click more! and paste the copied bookmarklet code into the URL field.</li>
+                <li>Step 4: Save the bookmark.</li>
+                <li>Step 5: Go to a YouTube video search page and click the bookmark to activate the tool.</li>
+                <li>Step 6: If on mobile type the name of the tool in the address bar while on Youtube video search page and select.</li>
+            </ul>
+        </div>
+        <div class="wrapper">
+            <div class="images-container">
+                <div class="image">
+                    <img src="/images/Yt-tool-images/Step-2.png" alt="Image 2">
+                </div>
+                <div class="image">
+                    <img src="/images/Yt-tool-images/Step-3.png" alt="Image 3">
+                </div>
+                <div class="image">
+                    <img src="/images/Yt-tool-images/Saving-the-functions.png" alt="Image 4">
+                </div>
+            </div>
+            <h2>Using The Tool In Your Browser!</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="/images/Yt-tool-images/Screen_Recording_20230520_095915_Chrome.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="tool-instructions">
+                <h3>Using The Youtube Thumbnail Compare & Review Tool:</h3>
+                <ul>
+                    <li>Step 1: Open Youtube in your browser.</li>
+                    <li>Step 2: Search for a video topic on Youtube.</li>
+                    <li>Step 3: Scroll to see all the top ranking videos for your search/ topic of interest</li>
+                    <li>Step 4: Click the address bar in your browser and type the name of your bookmark - (YT Thumbnail Comparison Tool)</li>
+                    <li>Step 5: Select the bookmark while still on the Youtube search page.</li>
+                    <li>Step 6: The Tool should take effect if instructions are followed properly. Enjoy!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <span id="popupMessage">Bookmarklet copied!</span>
+        </div>
+    </div>
+
+    <script>
+        // Function to copy the bookmarklet code to the clipboard
+        function copyBookmarklet() {
+            // Bookmarklet code...
+            var bookmarkletCode = 'javascript:var %24jscomp%3D%24jscomp%7C%7C%7B%7D%3B%24jscomp.scope%3D%7B%7D%3B%24jscomp.createTemplateTagFirstArg%3Dfunction(b)%7Breturn b.raw%3Db%7D%3B%24jscomp.createTemplateTagFirstArgWithRaw%3Dfunction(b%2Cf)%7Bb.raw%3Df%3Breturn b%7D%3Bvar popupContainer%3Ddocument.createElement("div")%3BpopupContainer.style.cssText%3D"%5Cn  position%3A fixed%3B%5Cn  top%3A 0%3B%5Cn  left%3A 0%3B%5Cn  width%3A 100%25%3B%5Cn  height%3A 100%25%3B%5Cn  display%3A flex%3B%5Cn  align-items%3A center%3B%5Cn  justify-content%3A center%3B%5Cn  background-color%3A rgba(0%2C 0%2C 0%2C 0.5)%3B%5Cn  z-index%3A 9999%3B%5Cn"%3Bvar popupContent%3Ddocument.createElement("div")%3BpopupContent.style.cssText%3D"%5Cn  max-width%3A 80%25%3B%5Cn  max-height%3A 80%25%3B%5Cn  overflow-y%3A scroll%3B%5Cn  background-color%3A %23fff%3B%5Cn  color%3A black%3B%5Cn  border-radius%3A 8px%3B%5Cn  padding%3A 20px%3B%5Cn  box-shadow%3A 0 0 10px rgba(0%2C 0%2C 0%2C 0.2)%3B%5Cn  position%3A relative%3B%5Cn"%3Bvar closeButton%3Ddocument.createElement("button")%3BcloseButton.textContent%3D"Close"%3BcloseButton.style.cssText%3D"%5Cn  position%3A absolute%3B%5Cn  top%3A 10px%3B%5Cn  right%3A 10px%3B%5Cn  padding%3A 8px%3B%5Cn  background-color%3A %23ddd%3B%5Cn  border%3A none%3B%5Cn  border-radius%3A 4px%3B%5Cn  cursor%3A pointer%3B%5Cn  font-size%3A 14px%3B%5Cn  font-weight%3A bold%3B%5Cn  z-index%3A 999%3B%5Cn"%3BcloseButton.addEventListener("click"%2Cfunction()%7Bdocument.body.removeChild(popupContainer)%7D)%3BpopupContent.appendChild(closeButton)%3Bvar videoElements%3Ddocument.querySelectorAll("ytm-video-with-context-renderer")%2CvideoInfo%3D%5B%5D%3BvideoElements.forEach(function(b)%7Bvar f%3Db.querySelector(".media-item-headline").textContent.trim()%2Cc%3Db.querySelector(".ytm-badge-and-byline-item-byline%3Anth-child(3) span").textContent.trim()%2Ca%3Db.querySelector(".ytm-badge-and-byline-item-byline%3Anth-child(5) span").textContent.trim()%2Cd%3Db.querySelector(".ytm-badge-and-byline-item-byline%3Anth-child(1) span").textContent.trim()%3Bb%3Db.querySelector("img").src%3BvideoInfo.push(%7Btitle%3Af%2Cviews%3Ac%2Cdate%3Aa%2CchannelName%3Ad%2Cthumbnail%3Ab%7D)%7D)%3BvideoInfo.forEach(function(b%2Cf)%7Bvar c%3Ddocument.createElement("div")%3Bc.style.cssText%3D"%5Cn    margin-bottom%3A 20px%3B%5Cn    padding-bottom%3A 20px%3B%5Cn    border-bottom%3A 1px solid %23ccc%3B%5Cn  "%3Bvar a%3Ddocument.createElement("img")%3Ba.src%3Db.thumbnail%3Ba.style.cssText%3D"%5Cn    max-width%3A 100%25%3B%5Cn    object-fit%3A contain%3B%5Cn    height%3A 200px%3B%5Cn    margin-bottom%3A 10px%3B%5Cn  "%3Bc.appendChild(a)%3Ba%3Ddocument.createElement("h3")%3Ba.textContent%3Db.title%3Bc.appendChild(a)%3Ba%3Ddocument.createElement("p")%3Ba.textContent%3D"Views%3A "%2Bb.views%3Bc.appendChild(a)%3Ba%3Ddocument.createElement("p")%3Ba.textContent%3D"Date%3A "%2Bb.date%3Bc.appendChild(a)%3Ba%3Ddocument.createElement("p")%3Ba.textContent%3D"Channel%3A "%2Bb.channelName%3Ba.style.marginBottom%3D"8px"%3Bc.appendChild(a)%3Bif(1%3D%3D%3Df)%7Ba%3Ddocument.createElement("div")%3Ba.style.cssText%3D"%5Cn    margin-bottom%3A 20px%3B%5Cn    padding-bottom%3A 20px%3B%5Cn    border-bottom%3A 1px solid %23ccc%3B%5Cn  "%3Bvar d%3Ddocument.createElement("div")%3Bd.classList.add("thumbnail-placeholder")%3Bd.style.cssText%3D"%5Cn  max-width%3A 360px%3B%5Cn  height%3A 200px%3B%5Cn  background-color%3A %23ccc%3B%5Cn  margin-bottom%3A 10px%3B%5Cn  cursor%3A pointer%3B%5Cn  position%3A relative%3B%5Cn  background-size%3A cover%3B%5Cn"%3Bvar g%3Ddocument.createElement("p")%3Bg.textContent%3D"Click to add a thumbnail"%3Bg.style.cssText%3D"%5Cn    position%3A absolute%3B%5Cn    top%3A 50%25%3B%5Cn    left%3A 50%25%3B%5Cn    transform%3A translate(-50%25%2C -50%25)%3B%5Cn    font-size%3A 14px%3B%5Cn    color%3A %23333%3B%5Cn  "%3Bd.appendChild(g)%3Bvar e%3Ddocument.createElement("h3")%3Be.textContent%3D"Type your title here"%3Be.contentEditable%3D!0%3Be.style.cssText%3D"%5Cn    width%3A 80%25%3B%5Cn    height%3A 24px%3B%5Cn    margin-bottom%3A 10px%3B%5Cn    cursor%3A text%3B%5Cn    background-color%3A %23ccc%3B%5Cn    padding-top%3A 15px%3B%5Cn  "%3Be.addEventListener("input"%2Cfunction()%7Be.style.backgroundColor%3D"transparent"%7D)%3Ba.appendChild(d)%3Ba.appendChild(e)%3Bd.addEventListener("click"%2Cfunction()%7Bvar h%3Ddocument.createElement("input")%3Bh.type%3D"file"%3Bh.accept%3D"image%2F*"%3Bh.addEventListener("change"%2Cfunction(k)%7Bk%3Dk.target.files%5B0%5D%3Bvar l%3Dnew FileReader%3Bl.onload%3Dfunction(m)%7Bd.style.backgroundImage%3D"url("%2Bm.target.result%2B")"%3Bg.style.display%3D"none"%7D%3Bl.readAsDataURL(k)%7D)%3Bh.click()%7D)%3BpopupContent.appendChild(a)%7DpopupContent.appendChild(c)%7D)%3BpopupContainer.appendChild(popupContent)%3Bdocument.body.appendChild(popupContainer)%3Bvoid+0';
+
+            var tempInput = document.createElement('textarea');
+            tempInput.value = bookmarkletCode;
+            document.body.appendChild(tempInput);
+
+            tempInput.select();
+            document.execCommand('copy');
+
+            document.body.removeChild(tempInput);
+
+            var popup = document.getElementById('popup');
+            popup.classList.add('show');
+
+            setTimeout(function () {
+                popup.classList.remove('show');
+            }, 3000);
+        }
+
+        var copyButton = document.getElementById('copyButton');
+        copyButton.addEventListener('click', copyBookmarklet);
+    </script>
+</body>
+
+</html>
