@@ -325,3 +325,13 @@ window.onload = function () {
         }
     });
 };
+
+// Find the <a> element for the store link placement by its text content 📚 For Your Next Trip!
+var storeLinkReplace = document.getElementsByTagName("a");
+for (var i = 0; i < storeLinkReplace.length; i++) {
+    if (storeLinkReplace[i].textContent === "📚 For Your Next Trip!") {
+        // Change the href attribute to "/store"
+        storeLinkReplace[i].setAttribute("href", "/store");
+        break; // Exit the loop after the first match is found
+    }
+}
