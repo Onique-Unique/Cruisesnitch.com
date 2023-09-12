@@ -133,7 +133,23 @@ fetch('js/products.json')
     });
 
 function displayProducts(products) {
-    productContainer.innerHTML = `<p class= "instant-header">Instant Downloads/ PDF's Available <i class="fa-solid fa-circle-down"></i></p>`;
+    productContainer.innerHTML = `
+    <p class= "instant-header">Instant Downloads/ PDF's Available <i class="fa-solid fa-circle-down"></i></p>
+    <br>
+    <section class="above-products">
+    <div class="above-products-container">
+      <a class="above-products-image" href="https://fromtheship.etsy.com">
+        <img src="/images/store-pfp/store pfp.png" alt="Cruise Vacation Digital & Printables" width="300" height="206">
+      </a>
+      <div class="above-products-content">
+        <h1 class="above-products-heading"><span>Cruise Productivity</span> & Documenting Memories Is Our Aim</h1>
+        <div class="above-products-text">
+          <p><strong>Hey my cruising friend!</strong></p>
+          <p>I’m Onique and I’m passionate about helping you maximise your cruise vacation no matter how long or short it may be. I’d love to help you organize your vacation but not only that - i want physical ways for you to document your cruise memories making the fullest of your time onboard, products are built with you in mind with the knowledge of my Cruise Employee experience so you can be sure what you get is 100% best for your: <br> <strong>Before, During & After Cruise Moments!</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>`;
     products.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
