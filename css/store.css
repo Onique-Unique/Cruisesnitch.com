@@ -109,6 +109,10 @@ button {
   font-size: 1.4rem;
 }
 
+.no-results-message {
+  margin-top: 60px;
+}
+
 .svg-wave {
   position: fixed;
   bottom: 0;
