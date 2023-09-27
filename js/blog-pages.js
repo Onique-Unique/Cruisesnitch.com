@@ -161,58 +161,6 @@ window.onload = function () {
         });
     };
 
-    // Uncomment When Digital Products Are Built  vvvv
-
-    // Find the first div-container element on the page
-    // const divContainerPrepend = document.querySelector('.div-container');
-
-    //     // Create a new HTML element
-    //     const newElement = document.createElement('div');
-    //     newElement.id = "next-trip-items";
-    //     newElement.innerHTML = `
-    // <div class="suggested-top">
-    //                 <h2> For Your Next Cruise Trip! </h2>
-    //                 <!-- Only one Suggested Item for affiliate -->
-    //                 <div class="wrapper">
-    //                     <div class="item-box">
-    //                         <a href="#" target="_blank">
-    //                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Wine Card.png" alt="For Your Next Cruise Trip" title="For Your Next Cruise Trip" decoding="async"></a>
-    //                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Wine Score Card</h3></a>                   
-    //                         <a class="suggest-link" href="https://www.etsy.com/FromTheShip/listing/1425054325/wine-tasting-score-card-cruise-ship?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1677269674419" target="_blank" rel="nofollow">See Item</a>
-    //                     </div>
-    //                     <div class="item-box">
-    //                         <a href="#" target="_blank">
-    //                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Cheese Card.png" alt="For Your Next Cruise Trip" title="For Your Next Cruise Trip" decoding="async"></a>
-    //                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Cheese Rate Card</h3></a> 
-    //                         <a class="suggest-link" href="https://www.etsy.com/FromTheShip/listing/1410848040/cheese-tasting-rate-card-cruise-ship?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1677269696454" target="_blank" rel="nofollow">See Item</a>
-    //                     </div>
-    //                 </div>
-    //                 <div class="wrapper">
-    //                     <div class="item-box">
-    //                         <a href="#" target="_blank">
-    //                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Wine & Cheese Combo.png" alt="For Your Next Cruise Trip" title="For Your Next Cruise Trip" decoding="async"></a>
-    //                         <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Wine & Cheese Score Chart (Combo)</h3></a>                   
-    //                         <a class="suggest-link" href="https://www.etsy.com/FromTheShip/listing/1425064283/wine-cheese-score-chart-combo-cruise?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1677269720813" target="_blank" rel="nofollow">See Item</a>
-    //                     </div>
-    //                     <div class="item-box">
-    //                         <a href="#" target="_blank">
-    //                             <img loading="lazy" class="suggested-item" border="0" src="/digital-products/Specimen - Trivia Card.png" alt="For Your Next Cruise Trip" title="For Your Next Cruise Trip" decoding="async"></a>
-    //                             <a href="#" target="_blank" rel="nofollow"><h3 class="suggested-text-item">Cruise Ship: <br> Trivia Fill Out Answer Sheet</h3></a>
-    //                         <a class="suggest-link" href="https://www.etsy.com/FromTheShip/listing/1425069949/lets-play-trivia-answer-fill-sheet?utm_source=Copy&utm_medium=ListingManager&utm_campaign=Share&utm_term=so.lmsm&share_time=1677269748574" target="_blank" rel="nofollow">See Item</a>
-    //                     </div>
-    //                 </div>
-    //                 <h3><span>Tip:</span> Add to cart to lock in cheapest deal!</h3>
-    //             </div>
-    //             `;
-
-    //     // Insert the new element before the first div-container element
-    // if (divContainerPrepend) {
-    //     divContainerPrepend.parentNode.insertBefore(newElement, divContainerPrepend);
-    // } else {
-    //     // Handle the case where no div-container elements were found
-    //     console.log('No div-container elements found on the page.');
-    // }
-
     // Swap CSS Background Image for Higher Quality
     var featuredImg = document.querySelector('.featured-img');
     var highres = '';
