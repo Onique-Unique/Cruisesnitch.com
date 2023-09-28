@@ -424,7 +424,7 @@ a {
 
 .blogs .blog_card .blog_card_img{
     width: 100%;
-    max-height: 180px;
+    height: 150px;
 }
 
 .blogs .blog_card .blog_card_content{
