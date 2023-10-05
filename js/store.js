@@ -90,7 +90,7 @@ function displayProducts(products) {
         productDiv.dataset.productId = product.id;
 
         const productImage = document.createElement('img');
-        productImage.src = `/digital-products/${product.image}`;
+        productImage.src = `/store-products/${product.image}`;
         productImage.alt = product.title;
 
         const productTitle = document.createElement('h2');
@@ -129,7 +129,7 @@ function displayProductPopup(product) {
     popupExit.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>`;
 
     const popupImage = document.createElement('img');
-    popupImage.src = `/digital-products/${product.image}`;
+    popupImage.src = `/store-products/${product.image}`;
     popupImage.alt = product.title;
 
     const popupTitle = document.createElement('h2');

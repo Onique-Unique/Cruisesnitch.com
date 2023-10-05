@@ -81,7 +81,7 @@
                     <div class="wrapper">
                         <div class="item-box">
                             <a href="${matchingProduct.url}" target="_blank">
-                                <img loading="lazy" class="suggested-item" border="0" src="/digital-products/${matchingProduct.image}" alt="${matchingProduct.title}" title="${matchingProduct.title}" decoding="async">
+                                <img loading="lazy" class="suggested-item" border="0" src="/store-products/${matchingProduct.image}" alt="${matchingProduct.title}" title="${matchingProduct.title}" decoding="async">
                             </a>
                             <a href="${matchingProduct.url}" target="_blank" rel="nofollow"><h3 class="suggested-text-item">${matchingProduct.title}</h3></a>
                             <a class="suggest-link" href="${matchingProduct.url}" target="_blank" rel="nofollow">See Item</a>
