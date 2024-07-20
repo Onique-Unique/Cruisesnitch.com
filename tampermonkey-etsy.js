@@ -430,6 +430,79 @@ function addDownloadFavoritesButton() {
     document.body.appendChild(downloadButton);
 }
 
+// Function to create and show the context menu
+function showContextMenu(event) {
+    const textareas = document.querySelectorAll('textarea');
+    let isEtsySitePresent = false;
+
+    textareas.forEach(textarea => {
+        if (textarea.value.includes('site:etsy.com')) {
+            isEtsySitePresent = true;
+        }
+    });
+
+    if (!isEtsySitePresent) return;
+
+    event.preventDefault();
+
+    // Remove any existing context menu
+    const existingMenu = document.getElementById('custom-context-menu');
+    if (existingMenu) {
+        existingMenu.remove();
+    }
+
+    // Create a new context menu
+    const contextMenu = document.createElement('div');
+    contextMenu.id = 'custom-context-menu';
+    contextMenu.style.position = 'fixed';
+    contextMenu.style.top = `${event.clientY}px`;
+    contextMenu.style.left = `${event.clientX}px`;
+    contextMenu.style.backgroundColor = '#fff';
+    contextMenu.style.border = '1px solid #ccc';
+    contextMenu.style.padding = '10px';
+    contextMenu.style.zIndex = '1000';
+    contextMenu.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';
+    contextMenu.style.borderRadius = '5px';
+
+    // Create a button to clear favorites
+    const clearFavoritesButton = document.createElement('button');
+    clearFavoritesButton.textContent = 'Clear Favorites';
+    clearFavoritesButton.style.padding = '10px';
+    clearFavoritesButton.style.border = 'none';
+    clearFavoritesButton.style.backgroundColor = '#f44336';
+    clearFavoritesButton.style.color = 'white';
+    clearFavoritesButton.style.borderRadius = '5px';
+    clearFavoritesButton.style.cursor = 'pointer';
+    clearFavoritesButton.addEventListener('click', clearFavorites);
+
+    // Append the button to the context menu
+    contextMenu.appendChild(clearFavoritesButton);
+
+    // Append the context menu to the document body
+    document.body.appendChild(contextMenu);
+
+    // Remove the context menu when clicking outside of it
+    document.addEventListener('click', function removeContextMenu() {
+        contextMenu.remove();
+        document.removeEventListener('click', removeContextMenu);
+    }, { once: true });
+}
+
+// Function to clear favorites from local storage
+function clearFavorites() {
+    favorites = [];
+    localStorage.setItem('etsy-favorites', JSON.stringify(favorites));
+    showNotification('Favorites cleared!');
+    const contextMenu = document.getElementById('custom-context-menu');
+    if (contextMenu) {
+        contextMenu.remove();
+    }
+}
+
+// Add event listener for right-click to show the context menu
+document.addEventListener('contextmenu', showContextMenu);
+
+
 // Add an event listener for URL changes
 window.addEventListener('urlchange', () => {
     setTimeout(checkAndHandleTextareas, 10); // Delay of 10 milliseconds
