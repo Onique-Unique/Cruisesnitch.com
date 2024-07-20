@@ -124,6 +124,8 @@ function checkAndHandleTextareas() {
             createDropdownButtons(textarea); // Create the dropdown buttons
             analyzeAndDisplayH3Texts(); // Analyze and display h3 texts in word soup
             addDownloadFavoritesButton();
+            // Add event listener for right-click to show the context menu
+            document.addEventListener('contextmenu', showContextMenu);
         }
     });
 }
@@ -432,19 +434,8 @@ function addDownloadFavoritesButton() {
 
 // Function to create and show the context menu
 function showContextMenu(event) {
-    const textareas = document.querySelectorAll('textarea');
-    let isEtsySitePresent = false;
-
-    textareas.forEach(textarea => {
-        if (textarea.value.includes('site:etsy.com')) {
-            isEtsySitePresent = true;
-        }
-    });
-
-    if (!isEtsySitePresent) return;
-
     event.preventDefault();
-
+    
     // Remove any existing context menu
     const existingMenu = document.getElementById('custom-context-menu');
     if (existingMenu) {
@@ -498,10 +489,6 @@ function clearFavorites() {
         contextMenu.remove();
     }
 }
-
-// Add event listener for right-click to show the context menu
-document.addEventListener('contextmenu', showContextMenu);
-
 
 // Add an event listener for URL changes
 window.addEventListener('urlchange', () => {
