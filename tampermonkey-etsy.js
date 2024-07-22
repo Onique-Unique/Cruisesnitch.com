@@ -124,6 +124,8 @@ function checkAndHandleTextareas() {
             createDropdownButtons(textarea); // Create the dropdown buttons
             analyzeAndDisplayH3Texts(); // Analyze and display h3 texts in word soup
             addDownloadFavoritesButton();
+            findAndDisplayReviewCounts();
+            addFavoriteButtons();
             // Add event listener for right-click to show the context menu
             document.addEventListener('contextmenu', showContextMenu);
             document.addEventListener("keydown", function (event) {
@@ -535,5 +537,3 @@ window.addEventListener('urlchange', () => {
 
 // Execute the functions once on page load
 checkAndHandleTextareas();
-findAndDisplayReviewCounts();
-addFavoriteButtons();
