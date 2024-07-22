@@ -100,7 +100,11 @@
 
         // Attach event listener to block context menu
         document.addEventListener('contextmenu', blockContextMenu);
-        document.addEventListener('keydown', blockContextMenu);
+        document.addEventListener("keydown", function (event) {
+                if (event.ctrlKey && event.keyCode == 65 || event.ctrlKey && event.keyCode == 67 || event.ctrlKey && event.shiftKey && event.keyCode == 74 || event.ctrlKey && event.keyCode == 85 || event.keyCode == 123 || event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                    event.preventDefault();
+                }
+            });
 
         // Function to show a popup
         function showPopup(popupId) {
