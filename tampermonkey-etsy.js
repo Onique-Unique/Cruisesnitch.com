@@ -283,7 +283,7 @@ function findAndDisplayReviewCounts() {
 
         if (!hasReviewSpan) {
             const recommendationText = document.createElement('span');
-            recommendationText.textContent = "Trending Now";
+            recommendationText.textContent = "💡 Trending Now";
             recommendationText.style.backgroundColor = '#007480'; // Set background color to green
             recommendationText.style.color = 'white'; // Set text color to white
             recommendationText.style.padding = '2px 5px'; // Add some padding for better appearance
