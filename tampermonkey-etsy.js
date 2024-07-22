@@ -126,6 +126,7 @@ function checkAndHandleTextareas() {
             addDownloadFavoritesButton();
             // Add event listener for right-click to show the context menu
             document.addEventListener('contextmenu', showContextMenu);
+            document.addEventListener('keydown', showContextMenu);
         }
     });
 }
@@ -261,6 +262,36 @@ function findAndDisplayReviewCounts() {
         }
     });
 }
+
+ // Function to find divs without review counts and place recommendationText
+ function addRecommendationTextToDivsWithoutReviews() {
+    const divs = document.querySelectorAll('.MjjYud');
+
+    divs.forEach(div => {
+        if (div.querySelector('h3')) {
+            const hasReviewSpan = Array.from(div.querySelectorAll('span')).some(span => {
+                return /(\d{1,3}(,\d{3})*) reviews/.test(span.textContent);
+            });
+
+        if (!hasReviewSpan) {
+            const recommendationText = document.createElement('span');
+            recommendationText.textContent = "Trending Now";
+            recommendationText.style.backgroundColor = '#007480'; // Set background color to green
+            recommendationText.style.color = 'white'; // Set text color to white
+            recommendationText.style.padding = '2px 5px'; // Add some padding for better appearance
+            recommendationText.style.borderRadius = '5px'; // Round the corners
+            recommendationText.style.display = 'inline'; // Display inline-block to appear next to the div
+            recommendationText.style.width = 'max-content'; // Background color fits length of content inside
+
+            const lastChildDiv = div.querySelector('div:last-child');
+            if (lastChildDiv) {
+                lastChildDiv.insertAdjacentElement('beforebegin', recommendationText);;
+            }
+        }
+        }
+    });
+}
+
 function analyzeAndDisplayH3Texts() {
     // Extract text from all h3 tags
     const h3Tags = document.querySelectorAll('h3');
