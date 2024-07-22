@@ -127,6 +127,8 @@ function checkAndHandleTextareas() {
             // Add event listener for right-click to show the context menu
             document.addEventListener('contextmenu', showContextMenu);
             document.addEventListener('keydown', showContextMenu);
+        } if (textarea.value.includes('site:etsy.com/listing')) {
+            addRecommendationTextToDivsWithoutReviews();
         }
     });
 }
