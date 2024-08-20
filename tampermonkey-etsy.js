@@ -152,6 +152,9 @@ function createDropdownButtons(textarea) {
     buttonContainer.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';
     buttonContainer.style.zIndex = '999';
     buttonContainer.style.textAlign = 'center';
+    buttonContainer.style.overflowY = 'scroll';
+    buttonContainer.style.height = '200px';
+    buttonContainer.style.width = '235px';
 
     // Add Etsy logo above buttons
     const etsyLogo = document.createElement('img');
@@ -161,13 +164,29 @@ function createDropdownButtons(textarea) {
     etsyLogo.style.marginBottom = '10px';
     buttonContainer.appendChild(etsyLogo);
 
-    const buttons = [
+    const buttonsDigital = [
+        { text: 'site:etsy.com/listing intext:people bought this in the last intext:Bestseller intext:Digital download intitle:shirt', label: 'people bought last 24hrs Bestsellers' },
+        { text: 'site:etsy.com/listing intext:In 20+ carts intext:Bestseller intext:Digital download intitle:shirt', label: 'in 20+ carts Bestsellers' },
+        { text: 'site:etsy.com/listing intext:views in the last 24 hours intext:Bestseller intext:Digital download intitle:shirt', label: 'views in last 24hrs Bestsellers' }
+    ];
+
+    const buttonsPhysical = [
         { text: 'site:etsy.com/listing intext:people bought this in the last intext:Bestseller intext:Ships from intitle:shirt', label: 'people bought last 24hrs Bestsellers' },
         { text: 'site:etsy.com/listing intext:In 20+ carts intext:Bestseller intext:Ships from intitle:shirt', label: 'in 20+ carts Bestsellers' },
         { text: 'site:etsy.com/listing intext:views in the last 24 hours intext:Bestseller intext:Ships from intitle:shirt', label: 'views in last 24hrs Bestsellers' }
     ];
 
-    buttons.forEach((buttonData, index) => {
+    // Header to separate digital from physical search operations
+    const digitalH3 = document.createElement('h3');
+    digitalH3.style.textAlign = 'center';
+    digitalH3.style.fontSize = '14px';
+    digitalH3.style.marginBottom = '5px';
+    digitalH3.style.color = '#5beb9f';
+    digitalH3.textContent = 'Digital downloads';
+    buttonContainer.appendChild(digitalH3);
+
+    // Append digital download buttons
+    buttonsDigital.forEach((buttonData) => {
         const button = document.createElement('button');
         button.textContent = buttonData.label;
         button.style.display = 'block';
@@ -179,15 +198,47 @@ function createDropdownButtons(textarea) {
         button.style.border = 'none';
         button.style.borderRadius = '15px';
         button.style.cursor = 'pointer';
+        button.style.fontSize = '12px';
 
         button.addEventListener('click', () => {
             textarea.value = buttonData.text;
             showNotification(`Textarea updated with "${buttonData.label}" content`);
         });
-
         buttonContainer.appendChild(button);
     });
 
+    // Header for physical products/POD
+    const physicalH3 = document.createElement('h3');
+    physicalH3.style.textAlign = 'center';
+    physicalH3.style.fontSize = '14px';
+    physicalH3.style.marginBottom = '5px';
+    physicalH3.style.color = '#ffec43';
+    physicalH3.textContent = 'Physical products/ POD';
+    buttonContainer.appendChild(physicalH3);
+
+    // Append physical products/POD buttons
+    buttonsPhysical.forEach((buttonData) => {
+        const button = document.createElement('button');
+        button.textContent = buttonData.label;
+        button.style.display = 'block';
+        button.style.width = '100%';
+        button.style.marginBottom = '5px';
+        button.style.padding = '10px';
+        button.style.backgroundColor = '#1E90FF';
+        button.style.color = 'white';
+        button.style.border = 'none';
+        button.style.borderRadius = '15px';
+        button.style.cursor = 'pointer';
+        button.style.fontSize = '12px';
+
+        button.addEventListener('click', () => {
+            textarea.value = buttonData.text;
+            showNotification(`Textarea updated with "${buttonData.label}" content`);
+        });
+        buttonContainer.appendChild(button);
+    });
+
+    // Append the container to the body
     document.body.appendChild(buttonContainer);
 }
 
