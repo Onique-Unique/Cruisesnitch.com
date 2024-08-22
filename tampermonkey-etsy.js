@@ -74,7 +74,6 @@ function showSearchBar(textarea) {
         if (newText) {
             handleIntitleText(newText, textarea, true); // Set reload to true
         }
-        document.body.removeChild(overlay); // Remove overlay on confirm
     });
 
     // Update document title based on textarea content
@@ -580,11 +579,24 @@ function clearFavorites() {
     }
 }
 
-// Add an event listener for URL changes
-window.addEventListener('urlchange', () => {
-    setTimeout(checkAndHandleTextareas, 10); // Delay of 10 milliseconds
-    setTimeout(findAndDisplayReviewCounts, 10); // Delay of 10 milliseconds
-});
+// Function to check screen size
+function isDesktop() {
+    // Define media query strings for different devices
+    const mobileQuery = '(max-width: 767px)'; // Mobile devices
+    const tabletQuery = '(min-width: 768px) and (max-width: 1024px)'; // Tablets
+    const iPadQuery = '(device-width: 768px) and (device-pixel-ratio: 2)'; // iPads (Retina)
 
-// Execute the functions once on page load
-checkAndHandleTextareas();
+    // Create MediaQueryList objects
+    const isMobile = window.matchMedia(mobileQuery).matches;
+    const isTablet = window.matchMedia(tabletQuery).matches;
+    const isIpad = window.matchMedia(iPadQuery).matches;
+
+    // Return true if not mobile, tablet, or iPad
+    return !isMobile && !isTablet && !isIpad;
+}
+
+// Run the check if screen size is not mobile, tablet, or iPad
+if (isDesktop()) {
+    // Execute the functions once on page load
+    checkAndHandleTextareas();
+}
