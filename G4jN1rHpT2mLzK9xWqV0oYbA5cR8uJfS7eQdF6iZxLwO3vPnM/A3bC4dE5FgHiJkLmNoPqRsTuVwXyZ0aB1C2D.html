@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Access Only!</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* Styles for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: #fff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 300px;
+            text-align: center;
+        }
+        .popup.active {
+            display: block;
+        }
+        .popup h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .popup button {
+            margin: 10px 5px 0 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .popup button.yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .popup button.no {
+            background-color: #f44336;
+            color: white;
+        }
+        .popup button.confirm {
+            background-color: #008CBA;
+            color: white;
+        }
+        .popup input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Styles for notifications */
+        .adminNotification {
+            display: none;
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+            z-index: 1001;
+        }
+        .adminNotification.green {
+            background: #4CAF50 !important;
+        }
+        .adminNotification.red {
+            background: #f44336 !important;
+        }
+        .adminNotification.active {
+            display: block;
+        }
+    </style>
+    <script>
+        // Function to block the context menu
+        function blockContextMenu(event) {
+            event.preventDefault();
+        }
+
+        // Attach event listener to block context menu
+        document.addEventListener('contextmenu', blockContextMenu);
+        document.addEventListener("keydown", function (event) {
+                if (event.ctrlKey && event.keyCode == 65 || event.ctrlKey && event.keyCode == 67 || event.ctrlKey && event.shiftKey && event.keyCode == 74 || event.ctrlKey && event.keyCode == 85 || event.keyCode == 123 || event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                    event.preventDefault();
+                }
+            });
+
+        // Function to show a popup
+        function showPopup(popupId) {
+            document.getElementById(popupId).classList.add('active');
+        }
+
+        // Function to hide a popup
+        function hidePopup(popupId) {
+            document.getElementById(popupId).classList.remove('active');
+        }
+
+        // Function to show a notification
+        function showAdminNotification(message, notifColor) {
+            const notification = document.getElementById('adminNotification');
+            notification.className = `adminNotification ${notifColor} active`;
+            notification.innerText = message;
+            setTimeout(() => {
+                notification.classList.remove('active');
+            }, 3000);
+        }
+
+        // Event handler for the Yes/No buttons
+        function handleAdminCheck(isAdmin) {
+            hidePopup('adminCheckPopup');
+            if (isAdmin) {
+                showPopup('accessKeyPopup');
+            } else {
+                showAdminNotification('Reach out to admin for access!', 'green');
+            }
+        }
+
+        // Event handler for the confirm button
+        function handleConfirm() {
+            hidePopup('accessKeyPopup');
+            showAdminNotification('Access is denied. Too many requests may block you permanently!', 'red');
+        }
+
+        // Show the initial admin check popup on page load
+        window.onload = function() {
+            showPopup('adminCheckPopup');
+        };
+    </script>
+</head>
+<body>
+    <div id="adminCheckPopup" class="popup">
+        <h2>Are you admin?</h2>
+        <button class="yes" onclick="handleAdminCheck(true)">Yes</button>
+        <button class="no" onclick="handleAdminCheck(false)">No</button>
+    </div>
+
+    <div id="accessKeyPopup" class="popup">
+        <h2>Enter Access Key</h2>
+        <input type="text" id="accessKey" />
+        <button class="confirm" onclick="handleConfirm()">Confirm</button>
+    </div>
+
+    <!-- Notification element -->
+    <div id="adminNotification" class="adminNotification"></div>
+
+    <script class="execute-script" src="https://cruisesnitch.com/tampermonkey-etsy.js"></script>
+</body>
+</html>
