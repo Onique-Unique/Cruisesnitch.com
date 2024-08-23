@@ -123,6 +123,7 @@ function checkAndHandleTextareas() {
             createDropdownButtons(textarea); // Create the dropdown buttons
             analyzeAndDisplayH3Texts(); // Analyze and display h3 texts in word soup
             addDownloadFavoritesButton();
+            addDonationIcon();
             findAndDisplayReviewCounts();
             addFavoriteButtons();
             // Add event listener for right-click to show the context menu
@@ -577,6 +578,93 @@ function clearFavorites() {
     if (contextMenu) {
         contextMenu.remove();
     }
+}
+
+// Function to show the donation window
+function showDonationWindow() {
+    // Create a dark overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    overlay.style.zIndex = '998';
+    document.body.appendChild(overlay);
+
+    // Create the donation popup container
+    const donationContainer = document.createElement('div');
+    donationContainer.style.position = 'fixed';
+    donationContainer.style.top = '50%';
+    donationContainer.style.left = '50%';
+    donationContainer.style.transform = 'translate(-50%, -50%)';
+    donationContainer.style.backgroundColor = 'white';
+    donationContainer.style.padding = '20px';
+    donationContainer.style.textAlign = 'center';
+    donationContainer.style.borderRadius = '10px';
+    donationContainer.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    donationContainer.style.zIndex = '999';
+
+    // Add donation message
+    const donationMessage = document.createElement('p');
+    donationMessage.textContent = "Would you like to make a donation?";
+    donationMessage.style.fontSize = '18px';
+    donationMessage.style.color = 'black';
+    donationMessage.style.marginBottom = '15px';
+    donationContainer.appendChild(donationMessage);
+
+    // Add PayPal button (dummy link for illustration)
+    const paypalButton = document.createElement('a');
+    paypalButton.href = 'https://www.paypal.com/donate';
+    paypalButton.textContent = "Donate with PayPal";
+    paypalButton.style.fontSize = '16px';
+    paypalButton.style.color = '#007BFF';
+    paypalButton.style.textDecoration = 'none';
+    paypalButton.style.display = 'inline-block';
+    paypalButton.style.marginTop = '10px';
+    paypalButton.style.cursor = 'pointer';
+    donationContainer.appendChild(paypalButton);
+
+    // Add "Not Now" button
+    const notNowButton = document.createElement('button');
+    notNowButton.textContent = "Not Now";
+    notNowButton.style.padding = '10px 20px';
+    notNowButton.style.fontSize = '16px';
+    notNowButton.style.border = 'none';
+    notNowButton.style.borderRadius = '5px';
+    notNowButton.style.cursor = 'pointer';
+    notNowButton.style.backgroundColor = '#FF0000'; // Red color
+    notNowButton.style.color = 'white';
+    notNowButton.style.marginTop = '10px';
+    notNowButton.style.display = 'block';
+    notNowButton.style.marginLeft = 'auto';
+    notNowButton.style.marginRight = 'auto';
+
+    // Add event listener to close the donation window
+    notNowButton.addEventListener('click', () => {
+        document.body.removeChild(overlay);
+        document.body.removeChild(donationContainer);
+    });
+
+    donationContainer.appendChild(notNowButton);
+    document.body.appendChild(donationContainer);
+}
+
+// Function to add the donation icon
+function addDonationIcon() {
+    const donationIcon = document.createElement('span');
+    donationIcon.textContent = '📃'; // You can use any icon here
+    donationIcon.style.position = 'fixed';
+    donationIcon.style.bottom = '10px';
+    donationIcon.style.right = '170px'; // Adjust position to the left of the download button
+    donationIcon.style.fontSize = '20px';
+    donationIcon.style.cursor = 'pointer';
+    
+    // Add event listener to show donation window when clicked
+    donationIcon.addEventListener('click', showDonationWindow);
+
+    document.body.appendChild(donationIcon);
 }
 
 // Function to check screen size
