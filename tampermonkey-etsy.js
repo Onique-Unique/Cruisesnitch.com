@@ -277,21 +277,22 @@ function showNotification(message) {
 
 // Function to find and display review counts
 function findAndDisplayReviewCounts() {
-    const spans = document.querySelectorAll('span');
+    const spans = document.querySelectorAll('.RDApEe.YrbPuc');
     const reviewCounts = [];
 
     spans.forEach(span => {
-        const textContent = span.textContent;
-        const match = textContent.match(/(\d{1,3}(,\d{3})*) reviews/);
+        const textContent = span.textContent.replace(/\(|\)/g, '');
+        const match = textContent.match(/(\d{1,3}(,\d{3})*)/);
         if (match) {
             // Remove commas and parse as a number
             const reviewCount = parseInt(match[1].replace(/,/g, ''), 10);
+            console.log(reviewCount);
             reviewCounts.push(reviewCount);
             // span.style.display = 'none'; // Hide the span
         }
     });
 
-    const targetDivs = document.querySelectorAll('.ChPIuf');
+    const targetDivs = document.querySelectorAll('.ChPIuf, .jC6vSe');
     targetDivs.forEach((div, index) => {
         if (reviewCounts[index] !== undefined) {
             const multipliedReviewCount = reviewCounts[index] * 4.2; // Multiply by 4.45
@@ -328,8 +329,8 @@ function findAndDisplayReviewCounts() {
 
     divs.forEach(div => {
         if (div.querySelector('h3')) {
-            const hasReviewSpan = Array.from(div.querySelectorAll('span')).some(span => {
-                return /(\d{1,3}(,\d{3})*) reviews/.test(span.textContent);
+            const hasReviewSpan = Array.from(div.querySelectorAll('.RDApEe.YrbPuc')).some(span => {
+                return /(\d{1,3}(,\d{3})*)/.test(span.textContent);
             });
 
         if (!hasReviewSpan) {
