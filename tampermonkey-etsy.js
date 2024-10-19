@@ -167,13 +167,15 @@ function createDropdownButtons(textarea) {
     const buttonsDigital = [
         { text: 'site:etsy.com/listing intext:people bought this in the last intext:Bestseller intext:Digital download intitle:shirt', label: 'people bought last 24hrs Bestsellers' },
         { text: 'site:etsy.com/listing intext:In 20+ carts intext:Bestseller intext:Digital download intitle:shirt', label: 'in 20+ carts Bestsellers' },
-        { text: 'site:etsy.com/listing intext:views in the last 24 hours intext:Bestseller intext:Digital download intitle:shirt', label: 'views in last 24hrs Bestsellers' }
+        { text: 'site:etsy.com/listing intext:views in the last 24 hours intext:Bestseller intext:Digital download intitle:shirt', label: 'views in last 24hrs Bestsellers' },
+        { text: 'site:etsy.com/listing intext:favorites from Etsy shoppers intext:Digital download intitle:shirt', label: 'favorited by Etsy buyers Bestsellers' }
     ];
 
     const buttonsPhysical = [
         { text: 'site:etsy.com/listing intext:people bought this in the last intext:Bestseller intext:Ships from intitle:shirt', label: 'people bought last 24hrs Bestsellers' },
         { text: 'site:etsy.com/listing intext:In 20+ carts intext:Bestseller intext:Ships from intitle:shirt', label: 'in 20+ carts Bestsellers' },
-        { text: 'site:etsy.com/listing intext:views in the last 24 hours intext:Bestseller intext:Ships from intitle:shirt', label: 'views in last 24hrs Bestsellers' }
+        { text: 'site:etsy.com/listing intext:views in the last 24 hours intext:Bestseller intext:Ships from intitle:shirt', label: 'views in last 24hrs Bestsellers' },
+        { text: 'site:etsy.com/listing intext:favorites from Etsy shoppers intext:Bestseller intext:Ships from intitle:shirt', label: 'favorited by Etsy buyers Bestsellers' }
     ];
 
     // Header to separate digital from physical search operations
