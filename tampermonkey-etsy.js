@@ -309,7 +309,7 @@ function findAndDisplayReviewCounts() {
             verifiedPurchasesText.style.width = 'max-content'; // Background color fits length of content inside
             div.appendChild(verifiedPurchasesText);
 
-            if(multipliedReviewCount < 2000){
+            if(multipliedReviewCount < 3000){
                 const recommendationText = document.createElement('span');
                 recommendationText.textContent = "On the rise";
                 recommendationText.style.marginLeft = '10px';
